@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prism - Scout Photography</title>
+</head>
+<body>
+    <h1>Welcome to Prism</h1>
+    <ul>
+        {% for submission in submissions %}
+            <li>{{ submission.student_name }} - {{ submission.image.url }}</li>
+        {% empty %}
+            <li>No submissions yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
