@@ -8,3 +8,10 @@ class Submission(models.Model):
     def __str__(self):
         return f"{self.student_name} - {self.image.name}"
 
+class Student(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
