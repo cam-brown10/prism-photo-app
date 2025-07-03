@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Login</title>
+</head>
+<body>
+    <h1>Select Your Name to Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <select name="name" required>
+            <option value="">Select your name</option>
+            {% for student in students %}
+                <option value="{{ student.name }}">{{ student.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
